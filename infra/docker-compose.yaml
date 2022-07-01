@@ -1,24 +1,21 @@
-# версия docker-compose
-version: '3.8'
+version: '3.7'
 
-# имена и описания контейнеров, которые должны быть развёрнуты
 services:
-  # описание контейнера db
   db:
-    # образ, из которого должен быть запущен контейнер
     image: postgres:13.0-alpine
-    # volume и связанная с ним директория в контейнере
     volumes:
       - /var/lib/postgresql/data/
-    # адрес файла, где хранятся переменные окружения
     env_file:
       - ./.env
   web:
-    build: .
+    build:
+      context: ../
+      dockerfile: api_yamdb/Dockerfile
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     restart: always
     ports:
      - "8000:8000"
-    # "зависит от", 
     depends_on:
       - db
     env_file:
