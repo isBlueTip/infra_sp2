@@ -18,17 +18,22 @@ docker exec -it infra_web_1 python3 manage.py createsuperuser --email root@root.
 Задайте пароль для суперпользователя. Логин суперпользователя - root.  
 Для проверки работоспособности, перейдите на localhost/admin
 
-## Пример .env файла
 
+## Заполнение БД тестовыми данными
+
+```bash
+docker exec infra_web_1 python3 manage.py loaddata fixtures/fixtures.json
+```
+
+## Пример .env файла
+```Python
 DB_ENGINE=django.db.backends.postgresql
 DB_NAME=postgres
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=pass
 DB_HOST=db
 DB_PORT=5432
-
-## Заполнение БД тестовыми данными
-
+```
 ## Документация API
 
 доступна по адресу localhost/redoc при развёрнутом проекте
@@ -37,6 +42,11 @@ DB_PORT=5432
 
 Django, Django REST framework, JWT, Docker, Postgres, Nginx, Gunicorn
 
-## Авторы
+## Автор
 
-+
+Семён Егоров  
+
+
+[LinkedIn](linkedin.com)  
+[Email](rhinorofl@gmail.com)  
+[Telegram](https://t.me/SamePersoon)
