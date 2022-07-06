@@ -34,7 +34,7 @@ class Title(models.Model):
     name = models.CharField(max_length=200)
     year = models.PositiveIntegerField(
         default=current_year(),
-        validators=[MinValueValidator(1984), max_value_current_year],
+        validators=[MinValueValidator(1800), max_value_current_year],
     )
     description = models.TextField(blank=True, null=True)
     category = models.ForeignKey(
