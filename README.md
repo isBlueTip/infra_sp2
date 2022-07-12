@@ -13,7 +13,7 @@ cd infra
 docker-compose up -d
 docker exec infra_web_1 python3 manage.py makemigrations
 docker exec infra_web_1 python3 manage.py migrate
-docker exec -it infra_web_1 python3 manage.py createsuperuser --email root@root.ru --username root -v 3
+docker exec -it infra_web_1 python3 manage.py createsuperuser --email root@root.com --username root -v 3
 ```
 Задайте пароль для суперпользователя. Логин суперпользователя - root.  
 Для проверки работоспособности, перейдите на localhost/admin
