@@ -47,6 +47,6 @@ Django, Django REST framework, JWT, Docker, Postgres, Nginx, Gunicorn
 Семён Егоров  
 
 
-[LinkedIn](linkedin.com)  
+[LinkedIn](https://www.linkedin.com/in/simonegorov/)  
 [Email](rhinorofl@gmail.com)  
 [Telegram](https://t.me/SamePersoon)
