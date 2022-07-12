@@ -1,14 +1,14 @@
 FROM python:3.7-slim
 
-RUN mkdir /app
+WORKDIR /app
 
-COPY api_yamdb/requirements.txt /app
+COPY api_yamdb/requirements.txt ./
 
-RUN pip3 install -r /app/requirements.txt --no-cache-dir
+RUN pip3 install -r requirements.txt --no-cache-dir
 
-COPY ./ /app
+COPY ./ ./
 
-WORKDIR /app/api_yamdb
+WORKDIR api_yamdb/
 
 RUN python3 manage.py collectstatic --no-input
 
